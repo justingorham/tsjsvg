@@ -8,11 +8,6 @@ export const schema = ${schema};
 
 export type DefinitionKeys = keyof typeof schema.definitions;
 
-export interface ModelValidationResult {
- errors?: ErrorObject[] | null;
- valid: boolean | PromiseLike<any>;
-}
-
 export class ModelValidator {
  public static for(def: DefinitionKeys) {
    const validator = new ModelValidator(def);
@@ -20,7 +15,7 @@ export class ModelValidator {
  }
  constructor(private def: DefinitionKeys) {}
 
- public isValidJson(data: any): ModelValidationResult {
+ public isValidJson(data: any) {
    const ajv = new AJV({ logger: false });
    const validate = ajv.compile({
      ...schema,

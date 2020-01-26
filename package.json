@@ -1,7 +1,7 @@
 {
   "name": "@justingorham/tsjsvg",
   "description": "Typescript json schema and validator generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Justin Gorham @justingorham",
   "bin": {
     "tsjsvg": "./bin/run"
