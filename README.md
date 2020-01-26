@@ -15,11 +15,11 @@ Typescript json schema and validator generator
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @justingorham/ts-json-schema-validator-generator
+$ npm install -g @justingorham/tsjsvg
 $ tsjsvg COMMAND
 running command...
 $ tsjsvg (-v|--version|version)
-@justingorham/ts-json-schema-validator-generator/1.0.0 win32-x64 node-v12.14.1
+@justingorham/tsjsvg/1.0.0 win32-x64 node-v12.14.1
 $ tsjsvg --help [COMMAND]
 USAGE
   $ tsjsvg COMMAND
@@ -28,28 +28,27 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`tsjsvg hello [FILE]`](#tsjsvg-hello-file)
+* [`tsjsvg generate`](#tsjsvg-generate)
 * [`tsjsvg help [COMMAND]`](#tsjsvg-help-command)
 
-## `tsjsvg hello [FILE]`
+## `tsjsvg generate`
 
-describe the command here
+generate schema and validator
 
 ```
 USAGE
-  $ tsjsvg hello [FILE]
+  $ tsjsvg generate
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -f, --fileName=fileName  Name of the generated file
+  -h, --help               show CLI help
+  -p, --path=path          The path to the TypeScript source file.
 
 EXAMPLE
-  $ tsjsvg hello
-  hello world from ./src/hello.ts!
+  $ tsjsvg generate -p src/models/**/*.ts -f src/model-validator.ts
 ```
 
-_See code: [src\commands\hello.ts](https://github.com/justingorham/ts-json-schema-validator-generator/blob/v1.0.0/src\commands\hello.ts)_
+_See code: [src\commands\generate.ts](https://github.com/justingorham/ts-json-schema-validator-generator/blob/v1.0.0/src\commands\generate.ts)_
 
 ## `tsjsvg help [COMMAND]`
 
