@@ -1,7 +1,7 @@
 import {Command, flags} from '@oclif/command'
 import {generate} from '../lib/generate'
 
-export default class Hello extends Command {
+export default class Generate extends Command {
   static description = 'generate schema and validator';
 
   static examples = [
@@ -24,7 +24,7 @@ export default class Hello extends Command {
   };
 
   async run() {
-    const {flags} = this.parse(Hello)
+    const {flags} = this.parse(Generate)
     if (!flags.path) {
       throw new Error('path flag must be set')
     }

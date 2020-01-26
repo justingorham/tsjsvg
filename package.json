@@ -1,7 +1,7 @@
 {
   "name": "@justingorham/tsjsvg",
   "description": "Typescript json schema and validator generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Justin Gorham @justingorham",
   "bin": {
     "tsjsvg": "./bin/run"
@@ -57,7 +57,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "justingorham/ts-json-schema-validator-generator",
+  "repository": "justingorham/tsjsvg",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
