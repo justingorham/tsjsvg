@@ -1,7 +1,7 @@
 {
   "name": "@justingorham/tsjsvg",
   "description": "Typescript json schema and validator generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Justin Gorham @justingorham",
   "bin": {
     "tsjsvg": "./bin/run"
@@ -39,7 +39,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/justingorham/ts-json-schema-validator-generator",
+  "homepage": "https://github.com/justingorham/tsjsvg",
   "keywords": [
     "oclif"
   ],
