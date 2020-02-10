@@ -1,11 +1,12 @@
-import {writeFile, ensureDir} from 'fs-extra'
-import * as shell from 'shelljs'
-import {generateFileContent} from './generate-file-content'
+import {ensureDir, writeFile} from 'fs-extra'
 import {dirname, join} from 'path'
+import * as shell from 'shelljs'
+import {GenerateContentParams, generteContent} from './generate-file-content'
 
 export interface GenerateParams {
   pathGlob: string;
   generatedFileName: string;
+  fileParams: Omit<GenerateContentParams, 'schema'>;
 }
 
 export const generate = async (params: GenerateParams) => {
@@ -14,7 +15,7 @@ export const generate = async (params: GenerateParams) => {
     dirname(require.resolve(binName)),
     '..',
     'bin',
-    binName
+    binName,
   )
   const generateCommand = `node ${generatorPath} --path ${params.pathGlob}`
   shell.cd(process.cwd())
@@ -22,7 +23,10 @@ export const generate = async (params: GenerateParams) => {
   if (code !== 0) {
     throw new Error(stderr)
   }
-  const fileContent = generateFileContent(stdout)
+  const fileContent = await generteContent({
+    ...params.fileParams,
+    schema: stdout,
+  })
   await ensureDir(dirname(params.generatedFileName))
   await writeFile(params.generatedFileName, fileContent, 'utf8')
 }

@@ -21,6 +21,22 @@ export default class Generate extends Command {
       char: 'f',
       description: 'Name of the generated file',
     }),
+    defaultsVarName: flags.string({
+      description: 'export to set default validator',
+      default: 'defaults',
+    }),
+    definitionKeysTypeName: flags.string({
+      description: 'exported definition keys type name',
+      default: 'DefinitionKeys',
+    }),
+    modelValidatorClassName: flags.string({
+      description: 'name of the exported validator class',
+      default: 'ModelValidator',
+    }),
+    schemaVarName: flags.string({
+      description: 'exported name of the generated JSON schema',
+      default: 'schema',
+    }),
   };
 
   async run() {
@@ -34,6 +50,12 @@ export default class Generate extends Command {
     await generate({
       pathGlob: flags.path,
       generatedFileName: flags.fileName,
+      fileParams: {
+        defaultsVarName: flags.defaultsVarName,
+        definitionKeysTypeName: flags.definitionKeysTypeName,
+        modelValidatorClassName: flags.modelValidatorClassName,
+        schemaVarName: flags.schemaVarName,
+      },
     })
   }
 }

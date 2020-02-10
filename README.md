@@ -19,7 +19,7 @@ $ npm install -g @justingorham/tsjsvg
 $ tsjsvg COMMAND
 running command...
 $ tsjsvg (-v|--version|version)
-@justingorham/tsjsvg/1.0.5 win32-x64 node-v12.14.1
+@justingorham/tsjsvg/2.0.0 win32-x64 node-v12.15.0
 $ tsjsvg --help [COMMAND]
 USAGE
   $ tsjsvg COMMAND
@@ -40,15 +40,19 @@ USAGE
   $ tsjsvg generate
 
 OPTIONS
-  -f, --fileName=fileName  Name of the generated file
-  -h, --help               show CLI help
-  -p, --path=path          The path to the TypeScript source file.
+  -f, --fileName=fileName                            Name of the generated file
+  -h, --help                                         show CLI help
+  -p, --path=path                                    The path to the TypeScript source file.
+  --defaultsVarName=defaultsVarName                  [default: defaults] export to set default validator
+  --definitionKeysTypeName=definitionKeysTypeName    [default: DefinitionKeys] exported definition keys type name
+  --modelValidatorClassName=modelValidatorClassName  [default: ModelValidator] name of the exported validator class
+  --schemaVarName=schemaVarName                      [default: schema] exported name of the generated JSON schema
 
 EXAMPLE
   $ tsjsvg generate -p src/models/**/*.ts -f src/model-validator.ts
 ```
 
-_See code: [src\commands\generate.ts](https://github.com/justingorham/tsjsvg/blob/v1.0.5/src\commands\generate.ts)_
+_See code: [src\commands\generate.ts](https://github.com/justingorham/tsjsvg/blob/v2.0.0/src\commands\generate.ts)_
 
 ## `tsjsvg help [COMMAND]`
 

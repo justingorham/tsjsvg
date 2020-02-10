@@ -1,7 +1,7 @@
 {
   "name": "@justingorham/tsjsvg",
   "description": "Typescript json schema and validator generator",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "author": "Justin Gorham @justingorham",
   "bin": {
     "tsjsvg": "./bin/run"
@@ -9,24 +9,25 @@
   "bugs": "https://github.com/justingorham/tsjsvg/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
-    "@oclif/config": "^1.13.3",
+    "@oclif/config": "^1.14.0",
     "@oclif/plugin-help": "^2.2.3",
     "fs-extra": "^8.1.0",
+    "handlebars": "^4.7.3",
     "shelljs": "^0.8.3",
-    "ts-json-schema-generator": "^0.58.1",
+    "ts-json-schema-generator": "^0.60.0",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@types/fs-extra": "^8.0.1",
-    "@types/node": "^10.17.13",
+    "@types/node": "^10.17.14",
     "@types/shelljs": "^0.8.6",
     "ajv": "^6.11.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.8.0",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.1.0",
-    "globby": "^10.0.2",
-    "rimraf": "^3.0.0",
+    "globby": "^11.0.0",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   },
@@ -62,7 +63,7 @@
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
+    "test": "node bin/run generate -f tests/generated/validator.ts -p tests/models/**/*.ts",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
