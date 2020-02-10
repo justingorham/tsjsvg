@@ -1,7 +1,7 @@
 {
   "name": "@justingorham/tsjsvg",
   "description": "Typescript json schema and validator generator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Justin Gorham @justingorham",
   "bin": {
     "tsjsvg": "./bin/run"
@@ -23,6 +23,7 @@
     "@types/node": "^10.17.14",
     "@types/shelljs": "^0.8.6",
     "ajv": "^6.11.0",
+    "copyfiles": "^2.2.0",
     "eslint": "^6.8.0",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.1.0",
@@ -62,7 +63,7 @@
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme && copyfiles -f src/lib/generated-file.ts.hbs lib/lib",
     "test": "node bin/run generate -f tests/generated/validator.ts -p tests/models/**/*.ts",
     "version": "oclif-dev readme && git add README.md"
   },
