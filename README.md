@@ -19,7 +19,7 @@ $ npm install -g @justingorham/tsjsvg
 $ tsjsvg COMMAND
 running command...
 $ tsjsvg (-v|--version|version)
-@justingorham/tsjsvg/2.0.1 win32-x64 node-v12.15.0
+@justingorham/tsjsvg/2.1.0 win32-x64 node-v12.16.1
 $ tsjsvg --help [COMMAND]
 USAGE
   $ tsjsvg COMMAND
@@ -52,7 +52,7 @@ EXAMPLE
   $ tsjsvg generate -p src/models/**/*.ts -f src/model-validator.ts
 ```
 
-_See code: [src\commands\generate.ts](https://github.com/justingorham/tsjsvg/blob/v2.0.1/src\commands\generate.ts)_
+_See code: [src\commands\generate.ts](https://github.com/justingorham/tsjsvg/blob/v2.1.0/src\commands\generate.ts)_
 
 ## `tsjsvg help [COMMAND]`
 
